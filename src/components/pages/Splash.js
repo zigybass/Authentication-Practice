@@ -6,10 +6,10 @@ function Splash () {
         <div className="container">
             <h2>Splash Page</h2>
             <Link to="/login">
-            <button class="waves-effect waves-light btn">Login</button>
+            <button className="waves-effect waves-light btn">Login</button>
             </Link>
             <Link to="/createAccount">
-            <button class="waves-effect waves-light btn">Create Account</button>
+            <button className="waves-effect waves-light btn">Create Account</button>
             </Link>
         </div>
     )
