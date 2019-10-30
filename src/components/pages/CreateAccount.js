@@ -1,81 +1,96 @@
 import React from "react";
 
 class CreateAccount extends React.Component {
+  state = {
+    firstName: "",
+    password: "",
+    confirmPassword: "",
+    username: ""
+  };
 
-    state = {
-        firstName: "",
-        password: "",
-        confirmPassword: "",
-        username: ""
-    };
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-    onChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-      }
-    
-      render () {
+  onSubmit = e => {
+      e.preventDefault();
+      console.log("Submit")
+  }
+
+  render() {
     return (
-        <div className="container">
-      <form className="col s6">
-      <div className="row">
-          <div className="input-field col s5">
-            <input
-            value={this.state.firstName}
-            name="firstName"
-              placeholder="First Name"
-              id="first_name"
-              type="text"
-              className="validate"
-              onChange={this.onChange}
-            />
-            <label for="first_name"></label>
+      <div className="container">
+        <h3>Create a new account</h3>
+        <form className="col s6">
+          <div className="row">
+            <div className="input-field col s5">
+              <input
+                value={this.state.firstName}
+                name="firstName"
+                placeholder=""
+                id="first_name"
+                type="text"
+                className="validate"
+                onChange={this.onChange}
+              />
+              <label for="first_name">First Name</label>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s5">
-            <input
-            value={this.state.username}
-            name="username"
-              placeholder="Username"
-              id="first_name"
-              type="text"
-              className="validate"
-              onChange={this.onChange}
-            />
-            <label for="first_name"></label>
+          <div className="row">
+            <div className="input-field col s5">
+              <input
+                value={this.state.username}
+                name="username"
+                placeholder=""
+                id="first_name"
+                type="text"
+                className="validate"
+                onChange={this.onChange}
+              />
+              <label for="first_name">Username</label>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s5">
-            <input
-            value={this.state.password}
-            name="password"
-              placeholder="Password"
-              id="first_name"
-              type="text"
-              className="validate"
-              onChange={this.onChange}
-            />
-            <label for="first_name"></label>
+          <div className="row">
+            <div className="input-field col s5">
+              <input
+                value={this.state.password}
+                name="password"
+                placeholder=""
+                id="first_name"
+                type="text"
+                className="validate"
+                onChange={this.onChange}
+              />
+              <label for="first_name">Password</label>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s5">
-            <input
-            value={this.state.confirmPassword}
-            name="confirmPassword"
-              placeholder="Re-enter Password"
-              id="first_name"
-              type="text"
-              className="validate"
-              onChange={this.onChange}
-            />
-            <label for="first_name"></label>
+          <div className="row">
+            <div className="input-field col s5">
+              <input
+                value={this.state.confirmPassword}
+                name="confirmPassword"
+                placeholder=""
+                id="first_name"
+                type="text"
+                className="validate"
+                onChange={this.onChange}
+              />
+              <label for="first_name">Re-enter Password</label>
+            </div>
           </div>
-        </div>  
-      </form>
-    </div>
-    )}
+          <button
+            className="btn waves-effect blue waves-light"
+            type="submit"
+            name="action"
+            onClick={this.onSubmit}
+          >
+            Submit
+            <i className="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default CreateAccount;
