@@ -14,7 +14,11 @@ class CreateAccount extends React.Component {
 
   onSubmit = e => {
       e.preventDefault();
-      console.log("Submit")
+      const newUser = {
+          firstName: this.state.firstName,
+          username: this.state.username,
+          password: this.state.password
+      }
   }
 
   render() {
