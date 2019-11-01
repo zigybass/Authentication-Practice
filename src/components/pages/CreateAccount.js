@@ -19,6 +19,7 @@ class CreateAccount extends React.Component {
           username: this.state.username,
           password: this.state.password
       }
+      this.props.createUser(newUser)
   }
 
   render() {
