@@ -2,28 +2,22 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
+const router = express.Router();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
-axios.post('/api', {
-    headers: {
-        "Content-Type": "application/json"
-    }
-}, (req, res) => {
-    console.log("test server").then( (response) => {
-        res.json({
-            message: "Hello from server"
-        })
-    }
-    ).catch(function(err) {
-        res.status(500).json({
-          error: err.message
-        });
-      });
-});
+router.get('/test', function (req, res, next)  {
+    console.log("server console")
+}).then( function(response) {
+    res.json({
+        message: "Server Hello"
+    })
+})
 
 app.listen(PORT, console.log("Server live at PORT" + PORT));
